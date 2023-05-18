@@ -1,4 +1,7 @@
+import React, { useCallback } from "react";
+import { useRouter } from "next/router";
 import Episode from "@/interfaces/episode.interface";
+import usePodcasterStore from "@/store/store";
 
 interface EpisodesListProps {
   episodes: Episode[] | undefined;
@@ -6,6 +9,16 @@ interface EpisodesListProps {
 }
 
 const EpisodesList = ({ episodes, isLoading }: EpisodesListProps) => {
+  const router = useRouter();
+
+  const navigateToEpisode = useCallback(
+    (episode: Episode) => {
+      usePodcasterStore.setState({ selectedEpisode: episode });
+      router.push(`${router.asPath}/episode/${episode.id}}`);
+    },
+    [router]
+  );
+
   return (
     <div className='w-full bg-white border border-gray-200 rounded-lg cursor-pointer mx-auto shadow-lg mt-6'>
       <div className='flex flex-col p-4'>
@@ -27,7 +40,11 @@ const EpisodesList = ({ episodes, isLoading }: EpisodesListProps) => {
             <tbody>
               {!isLoading &&
                 episodes?.map((episode) => (
-                  <tr className='border-b hover:bg-gray-100' key={episode.id}>
+                  <tr
+                    className='border-b hover:bg-gray-100'
+                    key={episode.id}
+                    onClick={() => navigateToEpisode(episode)}
+                  >
                     <th
                       scope='row'
                       className='px-6 py-4 font-medium text-cyan-700 whitespace-nowrap'
