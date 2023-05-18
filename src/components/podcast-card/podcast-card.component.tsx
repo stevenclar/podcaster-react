@@ -1,8 +1,9 @@
 import React, { useCallback } from "react";
-import { useRouter } from 'next/navigation';
-import Image from 'next/image'
+import { useRouter } from "next/router";
+import Image from "next/image";
 import Podcast from "@/interfaces/podcast.interface";
-import './podcast-card.component.css';
+import styles from "./podcast-card.module.css";
+import { mergeClasses } from "@/utils/mergeClasses";
 
 interface PodcastCardProps {
   podcast: Podcast;
@@ -14,12 +15,18 @@ export const PodcastCard = ({ podcast }: PodcastCardProps) => {
   const goToPodcastDetail = useCallback(() => {
     router.push(`/podcast/${podcast.id}`);
   }, [router, podcast.id]);
-  
+
   return (
-    <div className='w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow mt-20 cursor-pointer mx-auto' onClick={goToPodcastDetail}>
+    <div
+      className='w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow mt-20 cursor-pointer mx-auto'
+      onClick={goToPodcastDetail}
+    >
       <div className='flex flex-col items-center pb-10 mx-5'>
         <Image
-          className='w-24 h-24 mb-3 rounded-full shadow-lg image'
+          className={mergeClasses(
+            styles.image,
+            "w-24 h-24 mb-3 rounded-full shadow-lg image"
+          )}
           src={podcast.image}
           alt='Bonnie image'
           width={200}
