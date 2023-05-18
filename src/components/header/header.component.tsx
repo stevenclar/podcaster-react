@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 
@@ -29,9 +30,12 @@ export const Header = () => {
     <nav className='bg-white shadow-sm'>
       <div className='flex flex-wrap items-center justify-between mx-auto p-4 max-w-screen-xl'>
         <a className='flex items-center cursor-pointer'>
-          <span className='self-center text-2xl font-semibold whitespace-nowrap text-cyan-600'>
+          <Link
+            href='/'
+            className='self-center text-2xl font-semibold whitespace-nowrap text-cyan-600'
+          >
             Podcaster
-          </span>
+          </Link>
         </a>
         {isRedirected && (
           <span className='relative flex h-6 w-6'>
