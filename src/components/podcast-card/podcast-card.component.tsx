@@ -4,6 +4,7 @@ import Image from "next/image";
 import Podcast from "@/interfaces/podcast.interface";
 import styles from "./podcast-card.module.css";
 import { mergeClasses } from "@/utils/mergeClasses";
+import usePodcasterStore from "@/store/store";
 
 interface PodcastCardProps {
   podcast: Podcast;
@@ -13,8 +14,9 @@ export const PodcastCard = ({ podcast }: PodcastCardProps) => {
   const router = useRouter();
 
   const goToPodcastDetail = useCallback(() => {
+    usePodcasterStore.setState({ selectedPodcast: podcast });
     router.push(`/podcast/${podcast.id}`);
-  }, [router, podcast.id]);
+  }, [podcast, router]);
 
   return (
     <div
