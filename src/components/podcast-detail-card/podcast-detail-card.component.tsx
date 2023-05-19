@@ -25,7 +25,7 @@ export const PodcastDetailCard = ({ podcast }: PodcastDetailCardProps) => {
           height={200}
           onClick={goToPodcastDetail}
         />
-        <div className='py-4 cursor-pointer' onClick={goToPodcastDetail}>
+        <div className='py-4 cursor-pointer self-start pl-3' onClick={goToPodcastDetail}>
           <h5 className='font-bold text-gray-900'>{podcast.title}</h5>
           <span className='text-sm italic text-gray-500'>
             By: {podcast.author}

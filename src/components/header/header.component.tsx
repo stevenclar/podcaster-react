@@ -32,7 +32,7 @@ export const Header = () => {
         <a className='flex items-center cursor-pointer'>
           <Link
             href='/'
-            className='self-center text-2xl font-semibold whitespace-nowrap text-cyan-600'
+            className='self-center text-2xl font-bold whitespace-nowrap text-cyan-600'
           >
             Podcaster
           </Link>

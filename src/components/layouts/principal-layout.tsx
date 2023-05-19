@@ -7,7 +7,7 @@ interface PrincipalLayoutProps {
 
 export default function PrincipalLayout({ children }: PrincipalLayoutProps) {
   return (
-    <div className="bg-gray-100">
+    <div className="bg-white">
       <Header />
       <main className="container mx-auto pb-10">{children}</main>
     </div>

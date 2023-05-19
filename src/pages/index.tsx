@@ -21,12 +21,12 @@ export default function Home() {
 
   return (
     <div className='pt-10'>
-      <div className='flex justify-end'>
-        <div className='p-2 bg-cyan-600 rounded text-white font-bold'>
+      <div className='flex justify-end items-center'>
+        <div className='px-1 h-fit bg-cyan-600 rounded-lg text-white font-bold'>
           {filteredPodcasts?.length}
         </div>
         <input
-          className='border rounded p-2 ml-2 text-gray-700'
+          className='border rounded p-2 ml-2 text-gray-700 w-80'
           type='text'
           placeholder='Filter podcast...'
           value={searchValue}
