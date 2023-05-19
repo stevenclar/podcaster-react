@@ -1,34 +1,67 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Prueba Angular Esoluzion
 
-## Getting Started
+Aplicación que permite listar y escuchar los 100 podcast mas escuchados y desplegada en [Podcaster](https://podcaster-react.vercel.app/)
 
-First, run the development server:
+## Comenzando 🚀
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+Clonar el repositorio
+
+```
+git clone https://github.com/stevenclar/podcaster-react
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Pre-requisitos 📋
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Tener instalado node con alguna de las siguientes versiones 14.20.x, 16.13.x and 18.10, npm, y angular cli
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Instalación 🔧
 
-## Learn More
+### development
 
-To learn more about Next.js, take a look at the following resources:
+```
+cd podcaster
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+npm i
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```
+npm run dev
+```
 
-## Deploy on Vercel
+### production
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
+cd podcaster
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```
+npm i
+```
+
+```
+npm run build && npm start
+```
+
+## Despliegue 📦
+
+_Se le ha Vercel hace push a main se actualiza la página_
+
+## Construido con 🛠️
+
+- [NextJS](https://nextjs.org/docs) - Next.js es un framework de React que se enfoca en la facilidad de uso y la escalabilidad
+- [Tailwind](https://tailwindcss.com/docs/) - Framework Css
+- [Zustand](https://github.com/pmndrs/zustand) - Zustand es una solución de gestión de estados pequeña, rápida y escalable.
+
+## Autores ✒️
+
+- **Deivid Steven Gonzalez** - _Desarrollo del proyecto_ - [stevenclar](https://github.com/stevenclar)
+
+## Expresiones de Gratitud 🎁
+
+- Muchas gracias Esoluzion por la oportunidad 🤓.
+
+---
+
+⌨️ con ❤️ por [StevenClar](https://github.com/stevenclar) 😊
