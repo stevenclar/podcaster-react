@@ -5,7 +5,7 @@ export const filterBy = (
 ) => {
   return podcasts?.filter((podcast: any) => {
     return fields.some((field) => {
-      return podcast[field]?.toLowerCase().includes(searchValue.toLowerCase());
+      return podcast[field]?.toLowerCase().includes(searchValue.trim().toLowerCase());
     });
   });
 };

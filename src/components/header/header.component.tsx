@@ -8,7 +8,6 @@ export const Header = () => {
 
   useEffect(() => {
     const handleStart = (url: string) => {
-      console.log(`Loading: ${url}`);
       setIsRedirected(true);
     };
 
