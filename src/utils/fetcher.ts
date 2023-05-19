@@ -30,19 +30,22 @@ const formatEpisodes = (unFormattedEpisodes: any) => {
   const formattedEpisodesData: Episode[] = unFormattedEpisodes.results
     ?.slice?.(1)
     .map((unformattedEpisode: any) => {
-      const duration = intervalToDuration({
-        start: 0,
-        end: +unformattedEpisode.trackTimeMillis,
-      });
-      const zeroPad = (num: number) => String(num).padStart(2, "0");
-      const formattedDuration = formatDuration(duration, {
-        format: ["hours", "minutes", "seconds"],
-        zero: true,
-        delimiter: ":",
-        locale: {
-          formatDistance: (_token, count) => zeroPad(count),
-        },
-      });
+      let formattedDuration = " - ";
+      if (unformattedEpisode.trackTimeMillis) {
+        const duration = intervalToDuration({
+          start: 0,
+          end: +unformattedEpisode.trackTimeMillis,
+        });
+        const zeroPad = (num: number) => String(num).padStart(2, "0");
+        formattedDuration = formatDuration(duration, {
+          format: ["hours", "minutes", "seconds"],
+          zero: true,
+          delimiter: ":",
+          locale: {
+            formatDistance: (_token, count) => zeroPad(count),
+          },
+        });
+      }
       const releaseDate = new Date(unformattedEpisode.releaseDate);
       const parsedEpisode = {
         id: unformattedEpisode.trackId,

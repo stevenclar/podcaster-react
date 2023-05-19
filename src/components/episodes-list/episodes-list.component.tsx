@@ -45,12 +45,12 @@ const EpisodesList = ({ episodes, isLoading }: EpisodesListProps) => {
                     key={episode.id}
                     onClick={() => navigateToEpisode(episode)}
                   >
-                    <th
+                    <td
                       scope='row'
-                      className='px-6 py-4 font-medium text-cyan-700 whitespace-nowrap'
+                      className='px-6 py-4 font-medium text-cyan-700'
                     >
                       {episode.title}
-                    </th>
+                    </td>
                     <td className='px-6 py-4'>{episode.published}</td>
                     <td className='px-6 py-4'>{episode.duration}</td>
                   </tr>
