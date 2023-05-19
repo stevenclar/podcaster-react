@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { PodcastCard } from "./podcast-card.component";
+import { PodcastDetailCard } from "./podcast-detail-card.component";
 
-const meta: Meta<typeof PodcastCard> = {
-  title: "Example/PodcastCard",
-  component: PodcastCard,
+const meta: Meta<typeof PodcastDetailCard> = {
+  title: "Example/PodcastDetailCard",
+  component: PodcastDetailCard,
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/react/writing-docs/autodocs
   tags: ["autodocs"],
   parameters: {
@@ -13,7 +13,7 @@ const meta: Meta<typeof PodcastCard> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof PodcastCard>;
+type Story = StoryObj<typeof PodcastDetailCard>;
 
 export const Default: Story = {
   args: {
@@ -23,6 +23,17 @@ export const Default: Story = {
       description: "The Joe Rogan Experience podcast",
       image: "https://random.imagecdn.app/200/200",
       author: "Joe Rogan",
+    },
+  },
+  parameters: {
+    nextjs: {
+      appDirectory: true,
+      navigation: {
+        pathname: '/podcast/[id]',
+        query: {
+          user: 'santa',
+        },
+      },
     },
   },
 };

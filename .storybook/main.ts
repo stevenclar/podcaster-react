@@ -16,5 +16,13 @@ const config: StorybookConfig = {
   docs: {
     autodocs: "tag",
   },
+  webpackFinal: async (webPackConfig) => {
+    webPackConfig?.module?.rules?.push({
+      test: /\.scss$/,
+      use: ["style-loader", "css-loader", "postcss-loader", "sass-loader"],
+    });
+
+    return webPackConfig;
+  },
 };
 export default config;
