@@ -29,14 +29,14 @@ export const Header = () => {
   return (
     <nav className='bg-white shadow-sm'>
       <div className='flex flex-wrap items-center justify-between mx-auto p-4 max-w-screen-xl'>
-        <a className='flex items-center cursor-pointer'>
+        <div className='flex items-center cursor-pointer'>
           <Link
             href='/'
             className='self-center text-2xl font-bold whitespace-nowrap text-cyan-600'
           >
             Podcaster
           </Link>
-        </a>
+        </div>
         {isRedirected && (
           <span className='relative flex h-6 w-6'>
             <span className='animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75'></span>
